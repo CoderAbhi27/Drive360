@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter driver-code to search: "
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/etCode"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:inputType="number"
+        android:maxLength="4"
+
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/edit_text_border"
+        android:layout_marginHorizontal="5dp"
+        />
+
+</LinearLayout>
