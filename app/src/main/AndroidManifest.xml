@@ -56,6 +56,10 @@
         <activity
             android:name="com.example.drive360.Activity.MainActivity"
             android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
