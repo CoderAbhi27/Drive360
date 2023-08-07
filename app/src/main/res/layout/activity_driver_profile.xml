@@ -32,7 +32,7 @@
             android:id="@+id/driverImageView"
             android:layout_width="200dp"
             android:layout_height="250dp"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             android:src="@drawable/profile"
              />
         </androidx.cardview.widget.CardView>
