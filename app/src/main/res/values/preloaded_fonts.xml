@@ -2,6 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/bevan</item>
+        <item>@font/biorhyme</item>
         <item>@font/goldman_bold</item>
     </array>
 </resources>

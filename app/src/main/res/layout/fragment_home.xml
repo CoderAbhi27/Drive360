@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Fragments.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
+        android:background="@drawable/full_image"
         android:orientation="vertical">
 
         <LinearLayout
@@ -24,7 +26,7 @@
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/bevan"
                 android:gravity="center"
                 android:paddingBottom="5dp"
                 android:textAlignment="center"/>
@@ -53,7 +55,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Here's what we offer,"
+            android:text="Here's what we offer!"
+            android:gravity="center"
+            android:textStyle="bold"
+
             android:textColor="@color/black"
             android:layout_marginTop="10dp"/>
 
@@ -63,6 +68,7 @@
             android:text="Extensive Driver Database"
             android:textColor="@color/black"
             android:textStyle="bold"
+            android:background="@drawable/round_edit_text"
             android:layout_marginTop="15dp"
             android:textAlignment="center"
             android:textSize="20sp"/>
@@ -82,6 +88,7 @@
             android:text="On Demand Driver Service"
             android:textColor="@color/black"
             android:textStyle="bold"
+            android:background="@drawable/round_edit_text"
             android:layout_marginTop="15dp"
             android:textAlignment="center"
             android:textSize="20sp"/>
@@ -91,12 +98,15 @@
             android:layout_height="wrap_content"
             android:text="@string/on_demand"
             android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:fontFamily="sans-serif"
             android:layout_marginStart="10dp"
             android:textColor="@color/black" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/round_edit_text"
             android:text="Fleet Management System"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -109,6 +119,8 @@
             android:layout_height="wrap_content"
             android:text="@string/fleet_management"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="15sp"
             android:layout_marginStart="10dp"
             android:textColor="@color/black" />
 
@@ -118,6 +130,7 @@
             android:text="Download our app today and revolutionize the way you manage your drivers and vehicles!"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
+            android:paddingTop="20dp"
             android:textSize="18sp"
             android:textColor="@color/black" />
         

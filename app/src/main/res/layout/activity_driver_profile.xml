@@ -65,6 +65,7 @@
                 android:id="@+id/tvDriverCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/biorhyme"
                 android:layout_weight="1"
                 android:text="Code no.: "
                 android:textAlignment="center"
@@ -77,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="0000"
+                android:fontFamily="@font/biorhyme"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -92,8 +94,10 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="Age: xx"
+            android:fontFamily="@font/biorhyme"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
@@ -103,9 +107,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="6dp"
+            android:fontFamily="@font/biorhyme"
             android:text="Phone: +91 xxxxxxxxxx"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ageTextView" />
 
@@ -116,8 +121,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="6dp"
             android:text="Experience: xx yrs"
+            android:fontFamily="@font/biorhyme"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneTextView" />
 
@@ -128,8 +134,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="2dp"
             android:text="Address: "
+            android:fontFamily="@font/biorhyme"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/certificateImageView" />
 
@@ -141,7 +148,8 @@
             android:layout_marginTop="6dp"
             android:text="Salary Demanded: ₹xxxxx"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:fontFamily="@font/biorhyme"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
 
@@ -153,13 +161,15 @@
             android:layout_marginTop="6dp"
             android:text="Hiring fee: ₹5000"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
+            android:fontFamily="@font/biorhyme"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/salaryTextView" />
 
 
         <ImageButton
             android:id="@+id/certificateImageView"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="20dp"
@@ -176,8 +186,11 @@
             android:layout_marginTop="40dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/round_rectangle"
-            android:backgroundTint="@android:color/holo_orange_light"
-            android:text="Hire Now"
+            android:backgroundTint="#673AB7"
+            android:text="Hire NOW"
+            android:fontFamily="@font/biorhyme"
+            android:textSize="25dp"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
