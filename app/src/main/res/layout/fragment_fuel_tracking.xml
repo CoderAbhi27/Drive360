@@ -10,29 +10,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@drawable/full_image"
         android:padding="16dp">
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fleet Management System"
             android:textSize="30sp"
             android:textStyle="bold"
+
             android:textColor="@color/black"
             android:fontFamily="sans-serif-black"
             android:textAlignment="center"
             android:layout_marginBottom="40dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="40dp"
+            android:orientation="horizontal">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            app:lottie_rawRes="@raw/shipanim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/orderNowButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="40dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/round_rectangle"
-            android:backgroundTint="@android:color/holo_orange_light"
+            android:backgroundTint="#D33B029F"
+            android:paddingHorizontal="40dp"
             android:text="Order Now" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -40,6 +60,8 @@
             android:text="How much companies lose on fuel theft?"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:background="#57673AB7"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:layout_marginBottom="10dp"/>
@@ -47,15 +69,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:text="@string/fuel_tracking_1"
-            android:textColor="@color/black"
-            android:layout_marginBottom="15dp"/>
+            android:textColor="@color/black" />
 
-        <ImageView
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/piechart"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/fuel_tracking_graph"
-            android:layout_marginBottom="10dp"/>
+            android:layout_height="350dp"
+            android:layout_marginBottom="10dp"
+
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -64,25 +88,70 @@
             android:textColor="@color/black"
             android:layout_marginBottom="15dp"/>
 
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@drawable/fuel_tracking_img2"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/fuelimgtruck"
             android:layout_marginBottom="20dp"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5626 USD"
+                    android:textColor="#9C0000"
+                    android:textSize="30dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/goldman_bold"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOSS TO THE COMPANY PER YEAR FROM A SINGLE CAR"
+                    android:layout_marginTop="20dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="How malefactors steal fuel"
             android:textSize="20sp"
+
+            android:background="#57673AB7"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textAlignment="center"
             android:layout_marginBottom="10dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="5dp"
+            android:layout_height="300dp"
+            app:dividerColor="#57673AB7"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:text="@string/fuel_tracking_3"
             android:textColor="@color/black"
             android:layout_marginBottom="10dp"/>
@@ -94,13 +163,16 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/black"
+            android:background="#57673AB7"
+            android:paddingLeft="15dp"
             android:layout_marginBottom="8dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fuel_tracking_4"
+            android:text="The Driver sells unfilled gasoline at a markup causing, while billing the company for the entire amount, causing huge losses."
             android:textColor="@color/black"
+            android:layout_marginLeft="15dp"
             android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -109,14 +181,17 @@
             android:text="• Direct Draining"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:background="#57673AB7"
             android:textColor="@color/black"
+            android:paddingLeft="15dp"
             android:layout_marginBottom="8dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fuel_tracking_5"
+            android:text="To drain the excess fuel, drivers fake the odometer or runtime meter data using special devices: correctors and programmers."
             android:textColor="@color/black"
+            android:layout_marginLeft="15dp"
             android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -125,15 +200,20 @@
             android:text="@string/dumping_from_the_back"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:background="#57673AB7"
             android:textColor="@color/black"
+            android:paddingLeft="15dp"
             android:layout_marginBottom="8dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fuel_tracking_6"
+            android:text="Drivers build a tee into the fuel feedback system, to which they connect a hose and drain the fuel."
             android:textColor="@color/black"
+            android:layout_marginLeft="15dp"
             android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -164,12 +244,20 @@
             android:text="@string/fuel_tracking_8"
             android:textColor="@color/black"
             android:layout_marginBottom="10dp"/>
-
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginBottom="10dp"
+            >
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/fuel_tracking_img4"
-            android:layout_marginBottom="10dp"/>
+            />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="match_parent"
@@ -182,11 +270,14 @@
             android:id="@+id/orderNowButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="40dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/round_rectangle"
-            android:backgroundTint="@android:color/holo_orange_light"
+            android:backgroundTint="#D33B029F"
+            android:paddingHorizontal="40dp"
             android:text="Order Now" />
         
     </LinearLayout>
