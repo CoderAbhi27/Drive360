@@ -6,76 +6,131 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@android:color/system_accent2_100"
+    android:background="@drawable/full_image"
     tools:context="com.example.drive360.Activity.MainActivity">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:src="@drawable/profileicon" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider"
+        android:layout_width="5dp"
+        android:layout_height="200dp"
+        app:dividerColor="#92673AB7"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Create Profile"
-        android:textSize="40sp"
+        android:text="Create \nProfile"
+        android:fontFamily="@font/goldman_bold"
+        android:textSize="50sp"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:layout_marginLeft="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Enter Name"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        android:background="@drawable/round_edit_text"
-        android:paddingHorizontal="20dp"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-    <EditText
-        android:id="@+id/editTextAge"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+
+            android:background="@drawable/round_edit_text"
+            android:hint="Enter Name"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="20dp"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputLayout3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Enter Age"
-        android:inputType="number"
-        android:textSize="16sp"
-        android:background="@drawable/round_edit_text"
-        android:paddingHorizontal="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
-    <EditText
-        android:id="@+id/editTextLocation"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextAge"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/round_edit_text"
+            android:hint="Enter Age"
+            android:inputType="number"
+            android:paddingHorizontal="20dp"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputLayout4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Enter Location"
-        android:inputType="text"
-        android:textSize="16sp"
-        android:background="@drawable/round_edit_text"
-        android:paddingHorizontal="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+        <EditText
+            android:id="@+id/editTextLocation"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_edit_text"
+            android:hint="Enter Location"
+            android:inputType="text"
+            android:paddingHorizontal="20dp"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSubmit"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_marginTop="50dp"
-        android:paddingHorizontal="30dp"
-        android:gravity="center"
+        android:layout_marginTop="30dp"
         android:background="@drawable/round_rectangle"
-        android:backgroundTint="@android:color/holo_orange_light"
+        android:backgroundTint="#2F305A"
+        android:gravity="center"
+        android:paddingHorizontal="30dp"
         android:text="Submit"
         android:textSize="20sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLocation" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

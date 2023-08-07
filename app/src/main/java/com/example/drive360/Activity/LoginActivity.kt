@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -15,6 +16,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.database.*
 import java.util.concurrent.TimeUnit
 import com.example.sagarmiles.R
+import com.google.android.material.textfield.TextInputEditText
 
 class LoginActivity : AppCompatActivity() {
 
@@ -34,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         val buttonGetOTP: Button= findViewById(R.id.buttonGetOTP)
         val buttonVerifyOTP : Button= findViewById(R.id.buttonVerifyOTP)
         val editTextCountryCode : EditText= findViewById(R.id.editTextCountryCode)
-        val editTextMobile : EditText= findViewById(R.id.editTextMobile)
+        val editTextMobile : TextInputEditText= findViewById(R.id.editTextMobile)
         editTextOTP = findViewById(R.id.editTextOTP)
 
         buttonGetOTP.setOnClickListener {
@@ -93,6 +95,7 @@ class LoginActivity : AppCompatActivity() {
                     // this method is called when verification failed
                     pd.dismiss()
                     Toast.makeText(this@LoginActivity, e.toString(), Toast.LENGTH_LONG).show()
+                    Log.i("fberror",e.toString())
                 }
 
                 override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {

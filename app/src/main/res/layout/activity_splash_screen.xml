@@ -4,16 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".splashScreen">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
         android:src="@drawable/profile"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/splashlogo" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider2"
+        style="@style/Widget.MaterialComponents.MaterialDivider"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginLeft="-30dp"
+        android:layout_marginRight="5dp"
+        app:dividerColor="#E6000E5C"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider4"
+        style="@style/Widget.MaterialComponents.MaterialDivider"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginLeft="-30dp"
+        android:layout_marginTop="15dp"
+        app:dividerColor="#E6000E5C"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView"
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider2" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider3"
+        style="@style/Widget.MaterialComponents.MaterialDivider"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginRight="-30dp"
+        app:dividerColor="#E6000E5C"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.divider.MaterialDivider
+        style="@style/Widget.MaterialComponents.MaterialDivider"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="-30dp"
+        android:layout_marginLeft="5dp"
+        app:dividerColor="#E6000E5C"
+        app:layout_constraintEnd_toStartOf="@+id/lottieAnimationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider3" />
+
+    <TextView
+        android:id="@+id/SplashLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/goldman_bold"
+        android:text="DRIVE 360"
+        android:textColor="#E6000E5C"
+        android:layout_marginTop="-50dp"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
