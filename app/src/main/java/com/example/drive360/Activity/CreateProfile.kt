@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.drive360.User
+import com.example.drive360.DataClass.User
 import com.google.firebase.database.*
 import com.example.sagarmiles.R
 
@@ -33,7 +33,7 @@ class CreateProfile : AppCompatActivity() {
             val age = editTextAge.text.toString().toInt()
             val location = editTextLocation.text.toString()
 
-            val user = User(name, phoneNo!!, age, location)
+            val user = User(name, phoneNo!!, age, location, "none")
 
             // You can choose a suitable child name. Here, "users" is used.
             database.child(phoneNo).setValue(user)
