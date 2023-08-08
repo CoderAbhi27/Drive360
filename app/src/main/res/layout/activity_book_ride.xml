@@ -104,25 +104,21 @@
             android:id="@+id/radioGroupPayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/rbCash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cash payment" />
+                android:text="Cash payment"
+                android:layout_marginEnd="20dp"/>
 
             <RadioButton
                 android:id="@+id/rbHalfPayment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Half Payment" />
+                android:text="Online Payment" />
 
-            <RadioButton
-                android:id="@+id/rbFullPayment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Full Payment" />
         </RadioGroup>
 
         <androidx.appcompat.widget.AppCompatButton

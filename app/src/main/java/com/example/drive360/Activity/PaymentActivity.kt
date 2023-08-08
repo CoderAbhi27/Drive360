@@ -56,16 +56,16 @@ class PaymentActivity : AppCompatActivity() {
                 findViewById<RadioButton>(selectedPaymentOptionId).text.toString()
 
             // Start payment activity based on the selected payment option
-            when (selectedPaymentOption) {
+          /*  when (selectedPaymentOption) {
                 "UPI" -> startUpiPaymentActivity(hiringFee!!)
                 "Card" -> startCardPaymentActivity(hiringFee!!)
                 "Netbanking" -> startNetbankingPaymentActivity(hiringFee!!)
-            }
+            }*/
         }
     }
 
 
-    private fun startUpiPaymentActivity(hiringFee: String) {
+/*    private fun startUpiPaymentActivity(hiringFee: String) {
         // Launch UPI payment activity
         val intent = Intent(this, UpiPaymentActivity::class.java)
         intent.putExtra("hiringFee", hiringFee)
@@ -84,7 +84,7 @@ class PaymentActivity : AppCompatActivity() {
         val intent = Intent(this, NetbankingPaymentActivity::class.java)
         intent.putExtra("hiringFee", hiringFee)
         startActivity(intent)
-    }
+    }*/
 
 }
 
