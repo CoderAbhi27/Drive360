@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
+        android:background="@drawable/full_image"
         android:orientation="vertical">
 
         <TextView
@@ -29,6 +30,7 @@
             android:layout_height="wrap_content"
             android:text="Explore our drivers"
             android:textSize="35sp"
+            android:background="#59673AB7"
             android:layout_gravity="center"
             android:textAlignment="center"
             android:textStyle="bold"
@@ -50,7 +52,9 @@
                 android:layout_weight="1"
                 android:layout_margin="15dp"
                 android:gravity="center"
+
                 android:background="@drawable/round_edit_text"
+                android:padding="10dp"
                 android:clickable="true"
                 android:orientation="vertical">
 
@@ -79,6 +83,7 @@
                 android:gravity="center"
                 android:background="@drawable/round_edit_text"
                 android:clickable="true"
+                android:padding="10dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -113,6 +118,7 @@
                 android:gravity="center"
                 android:background="@drawable/round_edit_text"
                 android:clickable="true"
+                android:padding="10dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -140,6 +146,7 @@
                 android:gravity="center"
                 android:background="@drawable/round_edit_text"
                 android:clickable="true"
+                android:padding="10dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -171,6 +178,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/round_edit_text"
                 android:clickable="true"
+                android:padding="10dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -188,18 +196,7 @@
                     android:textAlignment="center" />
 
             </LinearLayout>
-
-
-
-
-
-
-
-
-
         <LinearLayout
-
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -208,23 +205,18 @@
             android:layout_marginBottom="30dp"
             android:layout_marginHorizontal="30dp">
 
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/baseline_person_search_24"
-                android:scaleType="centerCrop"
-                android:paddingHorizontal="0dp"
-                android:background="@color/teal_200"
 
-                android:layout_weight="6"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/searchByCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:drawableStart="@drawable/baseline_person_search_24"
                 android:paddingHorizontal="0dp"
-                android:background="@color/teal_200"
+                android:background="#673AB7"
+                android:drawableTint="@color/white"
+                android:textColor="@color/white"
                 android:text="Search driver by code"
                 android:textAlignment="center"
                 android:textSize="20sp"/>

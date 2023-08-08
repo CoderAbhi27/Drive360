@@ -1,82 +1,123 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/full_image"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/profilePicture"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/edit_text_border"
-        android:src="@drawable/profile"/>
-
-    <ImageButton
-        android:id="@+id/editProfilePicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_add_24"
-        android:layout_marginStart="170dp"/>
-
-    <TextView
-        android:id="@+id/myNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/driverImageView"
-        android:layout_marginTop="35dp"
-        android:layout_marginStart="16dp"
-        android:text="Name: "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"/>
-
-    <TextView
-        android:id="@+id/myPhnoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/driverImageView"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:text="Phone no.: "
-        android:textSize="20sp"
-        android:textColor="@android:color/black"/>
-
-    <TextView
-        android:id="@+id/locationTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/driverImageView"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:text="location: "
-        android:textSize="20sp"
-        android:textColor="@android:color/black"/>
-
-    <TextView
-        android:id="@+id/userAgeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/driverImageView"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="16dp"
-        android:text="Age: "
-        android:textSize="20sp"
-        android:textColor="@android:color/black"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/yourDriversButton"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/certificateImageView"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:background="@color/purple_200"
-        android:text="Your drivers"/>
+        android:layout_height="match_parent"
+        android:layout_margin="35dp"
+        android:background="@drawable/profilebg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            app:cardCornerRadius="55dp"
+            app:cardElevation="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/profilePicture"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/editProfilePicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-35dp"
+            android:src="@drawable/baseline_add_24"
+            app:elevation="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+        <TextView
+            android:id="@+id/myNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="35dp"
+            android:fontFamily="@font/bevan"
+            android:text="Name: "
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cardView2"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+        <TextView
+            android:id="@+id/myPhnoTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="35dp"
+            android:fontFamily="@font/bevan"
+            android:text="Phone no.: "
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/myNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/myNameTextView" />
+
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/bevan"
+            android:text="location: "
+            android:layout_marginRight="35dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/myPhnoTextView"
+            app:layout_constraintTop_toBottomOf="@+id/myPhnoTextView" />
+
+        <TextView
+            android:id="@+id/userAgeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/bevan"
+            android:text="Age: "
+            android:layout_marginRight="35dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/locationTextView"
+            app:layout_constraintTop_toBottomOf="@+id/locationTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/yourDriversButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="45dp"
+            android:background="#673AB7"
+            android:text="Your drivers"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userAgeTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
