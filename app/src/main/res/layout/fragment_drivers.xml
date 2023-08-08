@@ -220,8 +220,6 @@
                 android:text="Search driver by code"
                 android:textAlignment="center"
                 android:textSize="20sp"/>
-
-
         </LinearLayout>
 
     </LinearLayout>
