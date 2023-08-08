@@ -67,6 +67,13 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
                     imageUri = uri
                     Log.i("uril","yes")
                     profilePic.setImageURI(uri)
+                    val imageRef = storage.reference.child("images/${imageUri.lastPathSegment}")
+                    imageRef.putFile(imageUri)
+                        .addOnSuccessListener {
+                            imageRef.downloadUrl.addOnSuccessListener { imageUrl ->
+                                dbref.child("profilePic").setValue(imageUrl)
+                            }
+                        }
                 }
             }
 
@@ -95,13 +102,6 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
                 builder.setTitle("ADD PROFILE PICTURE?")
                 builder.setPositiveButton("YES", DialogInterface.OnClickListener{ dialog, which->
                     selectImageLauncher.launch("image/*")
-                    val imageRef = storage.reference.child("UserData").child("images/${imageUri.lastPathSegment}")
-                    imageRef.putFile(imageUri)
-                        .addOnSuccessListener {
-                            imageRef.downloadUrl.addOnSuccessListener { imageUrl ->
-                                dbref.child("profilePic").setValue(imageUrl)
-                            }
-                        }
                 })
                 builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which-> })
             }
@@ -112,7 +112,7 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
                     dbref.child("profilePic").setValue("none")
                 })
                 builder.setPositiveButton("Change", DialogInterface.OnClickListener{ dialog, which->
-                    updateProfilePic()
+                    selectImageLauncher.launch("image/*")
                 })
                 builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which-> })
             }
@@ -120,8 +120,9 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
             alertDialog.show()
         }
 
-        val yourDriversButton: Button = view.findViewById(R.id.yourDriversButton)
 
+
+        val yourDriversButton: Button = view.findViewById(R.id.yourDriversButton)
         yourDriversButton.setOnClickListener{
             val intent = Intent(activity, YourDriversActivity::class.java)
             startActivity(intent)
@@ -132,14 +133,4 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
     }
 
 
-    private fun updateProfilePic() {
-      /*  val selectImageLauncher =
-            registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-                // Handle image URI selection
-                if (uri != null) {
-                    imageUri = uri
-                }
-            }*/
-
-    }
 }

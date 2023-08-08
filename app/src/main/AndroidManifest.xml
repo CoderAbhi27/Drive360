@@ -51,15 +51,6 @@
             android:name="com.example.drive360.Activity.BookRideActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.NetbankingPaymentActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.drive360.Activity.CardPaymentActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.drive360.Activity.UpiPaymentActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.drive360.Activity.YourDriversActivity"
             android:exported="false" />
         <activity
