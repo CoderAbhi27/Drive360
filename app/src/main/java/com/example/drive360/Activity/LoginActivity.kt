@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enter_phone)
-
+        supportActionBar?.hide()
         auth = FirebaseAuth.getInstance()
         dbref = FirebaseDatabase.getInstance().getReference("users")
 

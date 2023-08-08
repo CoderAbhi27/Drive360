@@ -9,9 +9,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.drive360.Activity.FuelTrackingOrderActivity
 import com.example.sagarmiles.R
+import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
+import com.github.mikephil.charting.formatter.PercentFormatter
+import com.github.mikephil.charting.utils.ColorTemplate
 
 class FuelTrackingFragment : androidx.fragment.app.Fragment(R.layout.fragment_fuel_tracking) {
     private lateinit var pieChart: PieChart
@@ -70,10 +75,25 @@ class FuelTrackingFragment : androidx.fragment.app.Fragment(R.layout.fragment_fu
         val values:ArrayList<PieEntry> = ArrayList()
         values.add(PieEntry(0.42f,"FUEL COSTS"))
         values.add(PieEntry(0.11f,"INSURANCE"))
-        values.add(PieEntry(0.5f,"TRAVEL EXPENSES"))
-        values.add(PieEntry(0.9f,"TRAVEL EXPENSES"))
-        values.add(PieEntry(0.5f,"TRAVEL EXPENSES"))
+        values.add(PieEntry(0.05f,"TRAVEL EXPENSES"))
+        values.add(PieEntry(0.09f,"REPAIR OF SPARE PARTS"))
+        values.add(PieEntry(0.1f,"DEPRECIATION"))
+        values.add(PieEntry(0.11f,"SALARIES OF DRIVERS"))
+        values.add(PieEntry(0.12f,"TRAVEL, TERMINALS, PARKING, COMMUNICATIONS"))
+        val colors:ArrayList<Int> = ArrayList()
 
+        for (color:Int in ColorTemplate.MATERIAL_COLORS)
+            colors.add(color)
+        val dataSet: PieDataSet = PieDataSet(values,"FUEL COSTS TRACKING")
+        dataSet.colors=colors
+        val data: PieData = PieData(dataSet)
+        data.setDrawValues(false)
+        data.setValueFormatter(PercentFormatter(pieChart))
+        data.setValueTextSize(12f)
+        data.setValueTextColor(Color.BLACK)
+        pieChart.data=data
+        pieChart.invalidate()
+        pieChart.animateY(1400, Easing.EaseInOutQuad)
 
     }
 }
