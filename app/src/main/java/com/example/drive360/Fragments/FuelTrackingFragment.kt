@@ -49,7 +49,7 @@ class FuelTrackingFragment : androidx.fragment.app.Fragment(R.layout.fragment_fu
     }
 
     private fun populatePieChart(pieChart: PieChart) {
-        pieChart.isDrawHoleEnabled=true
+        pieChart.isDrawHoleEnabled= true
         pieChart.setHoleColor(Color.TRANSPARENT)
         //pieChart.setUsePercentValues(true)
         //pieChart.setEntryLabelColor(Color.BLACK)
@@ -57,21 +57,22 @@ class FuelTrackingFragment : androidx.fragment.app.Fragment(R.layout.fragment_fu
         pieChart.setDrawEntryLabels(false)
         pieChart.centerText="MEMORY ANALYSIS"
         pieChart.setCenterTextSize(16f)
-        pieChart.setCenterTextColor(Color.WHITE)
+        pieChart.setCenterTextColor(Color.BLACK)
 
         pieChart.description.isEnabled=false
-        pieChart.setExtraOffsets(5f,5f,20f,5f)
+        /*pieChart.setExtraOffsets(5f,5f,20f,5f)*/
 
         val l: Legend =pieChart.legend
-        l.verticalAlignment= Legend.LegendVerticalAlignment.TOP
-        l.horizontalAlignment= Legend.LegendHorizontalAlignment.RIGHT
-        l.orientation= Legend.LegendOrientation.VERTICAL
+        l.verticalAlignment= Legend.LegendVerticalAlignment.BOTTOM
+        l.horizontalAlignment= Legend.LegendHorizontalAlignment.LEFT
+        l.orientation= Legend.LegendOrientation.HORIZONTAL
         l.setDrawInside(false)
-        l.textColor= Color.WHITE
+        l.textColor= Color.BLACK
         l.isEnabled=true
         l.textSize=12f
         l.xOffset=0f
         l.yOffset=0f
+        l.isWordWrapEnabled=true
         val values:ArrayList<PieEntry> = ArrayList()
         values.add(PieEntry(0.42f,"FUEL COSTS"))
         values.add(PieEntry(0.11f,"INSURANCE"))
@@ -82,6 +83,10 @@ class FuelTrackingFragment : androidx.fragment.app.Fragment(R.layout.fragment_fu
         values.add(PieEntry(0.12f,"TRAVEL, TERMINALS, PARKING, COMMUNICATIONS"))
         val colors:ArrayList<Int> = ArrayList()
 
+        for (color:Int in ColorTemplate.PASTEL_COLORS)
+            colors.add(color)
+        for (color:Int in ColorTemplate.VORDIPLOM_COLORS)
+            colors.add(color)
         for (color:Int in ColorTemplate.MATERIAL_COLORS)
             colors.add(color)
         val dataSet: PieDataSet = PieDataSet(values,"FUEL COSTS TRACKING")
@@ -97,3 +102,12 @@ class FuelTrackingFragment : androidx.fragment.app.Fragment(R.layout.fragment_fu
 
     }
 }
+
+
+
+
+
+
+
+
+
