@@ -4,13 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ExploreDrivers">
+    tools:context="com.example.drive360.Activity.ExploreDrivers">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_driver"
-        android:padding="12dp"/>
+        android:layout_height="wrap_content">
+
+        <Switch
+            android:id="@+id/filterSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter by Location  "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:background="@drawable/round_edit_text"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filterSwitch"
+            tools:listitem="@layout/item_driver" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>

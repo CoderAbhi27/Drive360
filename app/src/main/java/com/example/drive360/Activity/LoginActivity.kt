@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-            /*val otp = editTextOTP.text.toString()
+            val otp = editTextOTP.text.toString()
             // Here, you should have stored the verificationId sent to the sendVerificationCode function.
             // Let's assume it's stored in a variable called storedVerificationId
 
@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
                 pd.show()
                 val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, otp)
                 signInWithPhoneAuthCredential(credential, phoneNo)
-            }*/
+            }
 
 
         }

@@ -69,7 +69,6 @@ class ExploreDrivers : AppCompatActivity() , ItemClickListener {
         intent.putExtra("salaryDemanded",driver.salaryDemanded)
         intent.putExtra("hiringFee",driver.hiringFee)
         intent.putExtra("certificate",driver.certificate)
-
         startActivity(intent)
     }
 

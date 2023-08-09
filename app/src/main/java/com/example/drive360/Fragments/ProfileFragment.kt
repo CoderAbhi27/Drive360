@@ -13,7 +13,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.example.drive360.Activity.YourDriversActivity
@@ -92,11 +91,11 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
                 }
             }
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(activity, error.toString(), Toast.LENGTH_SHORT)
+                Toast.makeText(activity, error.toString(), Toast.LENGTH_SHORT).show()
             }
         })
 
-        profilePic.setOnClickListener{
+        editProfilePicButton.setOnClickListener{
             val builder = AlertDialog.Builder(requireActivity())
             if(pp=="none"){
                 builder.setTitle("ADD PROFILE PICTURE?")
@@ -108,7 +107,7 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
             else{
                 builder.setTitle("EDIT PROFILE PICTURE")
                 builder.setMessage("What do you want to do?")
-                builder.setPositiveButton("Delete", DialogInterface.OnClickListener{ dialog, which->
+                builder.setNeutralButton("Delete", DialogInterface.OnClickListener{ dialog, which->
                     dbref.child("profilePic").setValue("none")
                 })
                 builder.setPositiveButton("Change", DialogInterface.OnClickListener{ dialog, which->
