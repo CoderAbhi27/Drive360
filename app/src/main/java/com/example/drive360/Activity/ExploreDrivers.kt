@@ -1,22 +1,47 @@
 package com.example.drive360.Activity
 
+//import com.example.sagarmiles.Manifest
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationRequest
 import android.os.Bundle
+import android.widget.Switch
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.model.Marker
 import com.example.drive360.Adapters.DriverAdapter
 import com.example.drive360.DataClass.Driver
-import com.google.firebase.database.*
 import com.example.sagarmiles.R
+import com.google.android.gms.common.api.GoogleApiClient
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.GoogleMap
+import com.google.firebase.database.*
 
-class ExploreDrivers : AppCompatActivity() , ItemClickListener {
+class ExploreDrivers : AppCompatActivity() , ItemClickListener/*, OnMapReadyCallback,
+    LocationListener, GoogleApiClient.ConnectionCallbacks,
+    GoogleApiClient.OnConnectionFailedListener*/ {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DriverAdapter
     private var dataList : ArrayList<Driver> = ArrayList<Driver>()
     private lateinit var dbref : DatabaseReference
+
+  /*  private lateinit var mMap: GoogleMap
+    private lateinit var mLastLocation: Location
+    private lateinit var mCurrLocationMarker: Marker
+    private lateinit var mGoogleApiClient: GoogleApiClient
+    private lateinit var mLocationRequest: LocationRequest*/
+
+  /*  private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private lateinit var locationRequest: LocationRequest
+    private lateinit var locationCallback: LocationCallback
+    private var currentLocation: Location? = null*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +53,18 @@ class ExploreDrivers : AppCompatActivity() , ItemClickListener {
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.setHasFixedSize(true)
 
-//        getDriverData(driverType!!)
+//        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+
+
+        val filterLocationSwitch: Switch = findViewById(R.id.filterSwitch)
+
+        filterLocationSwitch.setOnCheckedChangeListener { p0, p1 ->
+            if (p1) {
+                // The toggle is enabled
+            } else {
+                // The toggle is disabled
+            }
+        }
 
         dbref = FirebaseDatabase.getInstance().getReference("drivers").child(driverType!!)
         dbref.addValueEventListener( object: ValueEventListener {
@@ -71,6 +107,97 @@ class ExploreDrivers : AppCompatActivity() , ItemClickListener {
         intent.putExtra("certificate",driver.certificate)
         startActivity(intent)
     }
+
+ /*   private fun isLocationPermissionGranted(): Boolean {
+        return if (ActivityCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(
+                    android.Manifest.permission.ACCESS_FINE_LOCATION,
+                    android.Manifest.permission.ACCESS_COARSE_LOCATION
+                ),
+                requestcode
+            )
+            false
+        } else {
+            true
+        }
+    }*/
+
+
+/*    override fun onMapReady(p0: GoogleMap?) {
+        mMap = p0
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION)
+                == PackageManager.PERMISSION_GRANTED) {
+                buildGoogleApiClient()
+                mMap.isMyLocationEnabled = true
+            }
+        } else {
+            buildGoogleApiClient()
+            mMap.isMyLocationEnabled = true
+        }
+    }
+
+    private fun buildGoogleApiClient() {
+        mGoogleApiClient = GoogleApiClient.Builder(this)
+            .addConnectionCallbacks(this)
+            .addOnConnectionFailedListener(this)
+            .addApi(LocationServices.API)
+            .build()
+        mGoogleApiClient.connect()
+    }
+
+    override fun onLocationChanged(p0: Location) {
+        mLastLocation = p0
+        if (::mCurrLocationMarker.isInitialized) {
+            mCurrLocationMarker.remove()
+        }
+        val latLng = LatLng(p0.latitude, p0.longitude)
+        val markerOptions = MarkerOptions()
+        markerOptions.position(latLng)
+        markerOptions.title("Current Position")
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        mCurrLocationMarker = mMap.addMarker(markerOptions)
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(11))
+
+        if (mGoogleApiClient != null) {
+            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this)
+        }
+    }
+
+    override fun onConnected(p0: Bundle?) {
+        mLocationRequest = LocationRequest()
+        mLocationRequest.interval = 1000
+        mLocationRequest.fastestInterval = 1000
+        mLocationRequest.priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+            == PackageManager.PERMISSION_GRANTED) {
+            LocationServices.FusedLocationApi.requestLocationUpdates(
+                mGoogleApiClient, mLocationRequest, this
+            )
+        }
+    }
+
+    override fun onConnectionSuspended(p0: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onConnectionFailed(p0: ConnectionResult) {
+        TODO("Not yet implemented")
+    }*/
 
 /*    // This is a placeholder function to simulate fetching data from a database
     private fun getDriverData(drivertype: String){

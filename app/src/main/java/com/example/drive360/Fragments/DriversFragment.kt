@@ -16,6 +16,7 @@ import com.example.drive360.Activity.ExploreDrivers
 import com.example.drive360.DataClass.Driver
 import com.google.firebase.database.*
 import com.example.sagarmiles.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class DriversFragment : androidx.fragment.app.Fragment(R.layout.fragment_drivers) {
@@ -41,10 +42,11 @@ class DriversFragment : androidx.fragment.app.Fragment(R.layout.fragment_drivers
 
         val truckDriversButton : LinearLayout = view.findViewById(R.id.truckDriversButton)
         val busDriversButton : LinearLayout = view.findViewById(R.id.busDriversButton)
-        val wheelerDriversButton : LinearLayout = view.findViewById(R.id.wheelerDriversButton)
+       // val wheelerDriversButton : LinearLayout = view.findViewById(R.id.wheelerDriversButton)
         val heavyDriversButton : LinearLayout = view.findViewById(R.id.heavyDriversButton)
         val carDriversButton : LinearLayout = view.findViewById(R.id.carDriversButton)
-        val searchByCodeButton : Button = view.findViewById(R.id.searchByCode)
+        val searchByCodeButton : FloatingActionButton = view.findViewById(R.id.searchByCode)
+
 
         truckDriversButton.setOnClickListener{
             val intent = Intent(activity, ExploreDrivers::class.java)
@@ -58,11 +60,11 @@ class DriversFragment : androidx.fragment.app.Fragment(R.layout.fragment_drivers
             startActivity(intent)
         }
 
-        wheelerDriversButton.setOnClickListener{
+        /*wheelerDriversButton.setOnClickListener{
             val intent = Intent(activity, ExploreDrivers::class.java)
             intent.putExtra("DriverType", "3wheeler")
             startActivity(intent)
-        }
+        }*/
 
         heavyDriversButton.setOnClickListener{
             val intent = Intent(activity, ExploreDrivers::class.java)
@@ -89,7 +91,7 @@ class DriversFragment : androidx.fragment.app.Fragment(R.layout.fragment_drivers
                 val driverType : String? = when(code[0]-'0'){
                     1 -> "truck"
                     2 -> "bus"
-                    3 -> "3wheeler"
+                    //3 -> "3wheeler"
                     4 -> "heavy"
                     5 -> "car"
                     else -> null

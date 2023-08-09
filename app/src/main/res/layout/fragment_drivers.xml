@@ -1,228 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:background="@drawable/full_image"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/topText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="We are proud to say, we have India's most trusted, skilled and well-trained certified drivers."
-            android:textSize="20sp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            />
-
-        <TextView
-            android:id="@+id/heading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Explore our drivers"
-            android:textSize="35sp"
-            android:background="#59673AB7"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginBottom="10dp"
-            android:padding="5dp"/>
-
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:background="@drawable/full_image"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <LinearLayout
-                android:id="@+id/truckDriversButton"
+            <TextView
+                android:id="@+id/topText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="15dp"
-                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="We are proud to say, we have India's most trusted, skilled and well-trained certified drivers."
+                android:textSize="20sp" />
 
-                android:background="@drawable/round_edit_text"
-                android:padding="10dp"
-                android:clickable="true"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/truck" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Truck Drivers"
-                    android:textSize="18sp"
-                    android:padding="6dp"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/busDriversButton"
+            <TextView
+                android:id="@+id/heading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="15dp"
-                android:gravity="center"
-                android:background="@drawable/round_edit_text"
-                android:clickable="true"
-                android:padding="10dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/bus" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Bus Drivers"
-                    android:textSize="18sp"
-                    android:padding="6dp"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/wheelerDriversButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="15dp"
-                android:gravity="center"
-                android:background="@drawable/round_edit_text"
-                android:clickable="true"
-                android:padding="10dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/wheeler" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="3 Wheeler Drivers"
-                    android:textSize="18sp"
-                    android:padding="6dp"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/heavyDriversButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="15dp"
-                android:gravity="center"
-                android:background="@drawable/round_edit_text"
-                android:clickable="true"
-                android:padding="10dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/heavy" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Heavy Vehicle Drivers"
-                    android:textSize="18sp"
-                    android:padding="6dp"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-
-            <LinearLayout
-                android:id="@+id/carDriversButton"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:gravity="center"
                 android:layout_gravity="center"
-                android:background="@drawable/round_edit_text"
-                android:clickable="true"
-                android:padding="10dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/car" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Car Drivers"
-                    android:textSize="18sp"
-                    android:padding="6dp"
-                    android:textAlignment="center" />
-
-            </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/teal_200"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginHorizontal="30dp">
+                android:layout_marginBottom="10dp"
+                android:background="#59673AB7"
+                android:padding="5dp"
+                android:text="Explore our drivers"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:textStyle="bold" />
 
 
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/searchByCode"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/baseline_person_search_24"
-                android:paddingHorizontal="0dp"
-                android:background="#673AB7"
-                android:drawableTint="@color/white"
-                android:textColor="@color/white"
-                android:text="Search driver by code"
-                android:textAlignment="center"
-                android:textSize="20sp"/>
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/truckDriversButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_edit_text"
+
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/truck" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="6dp"
+                        android:text="Truck Drivers"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/busDriversButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_edit_text"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/bus" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="6dp"
+                        android:text="Bus Drivers"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/carDriversButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_edit_text"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/car" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="6dp"
+                        android:text="Car Drivers"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/heavyDriversButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_edit_text"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/heavy" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="6dp"
+                        android:text="Heavy Vehicle Drivers"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!--  <LinearLayout
+                  android:id="@+id/wheelerDriversButton"
+                  android:layout_width="150dp"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="15dp"
+                  android:gravity="center"
+                  android:layout_gravity="center"
+                  android:background="@drawable/round_edit_text"
+                  android:clickable="true"
+                  android:padding="10dp"
+                  android:orientation="vertical">
+
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="120dp"
+                      android:scaleType="fitCenter"
+                      android:src="@drawable/wheeler" />
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:text="3 wheeler Drivers"
+                      android:textSize="18sp"
+                      android:padding="6dp"
+                      android:textAlignment="center" />
+
+              </LinearLayout>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@color/teal_200"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 
-</ScrollView>
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/searchByCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableStart="@drawable/baseline_person_search_24"
+        android:paddingHorizontal="0dp"
+        android:background="#673AB7"
+        android:drawableTint="@color/white"
+        android:textColor="@color/white"
+        android:text="Search driver by code"
+        android:textAlignment="center"
+        android:textSize="20sp"/>-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/searchByCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/baseline_person_search_24"
+        android:scaleType="centerCrop"
+        android:background="#673AB7"
+        android:drawableTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
