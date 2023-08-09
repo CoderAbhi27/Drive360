@@ -1,4 +1,4 @@
-package com.example.sagarmiles
+package com.example.drive360.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import android.widget.TextView
-import com.example.drive360.Activity.LoginActivity
+import com.example.sagarmiles.R
 
 class splashScreen : AppCompatActivity() {
     private lateinit var titleTextView: TextView

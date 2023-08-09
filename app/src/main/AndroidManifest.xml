@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name= "android.permission.SEND_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SAGARMILES"
         tools:targetApi="31">
-
+        <activity
+            android:name="com.example.drive360.Activity.HiredDriverProfileActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -25,14 +30,12 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
-
-<!--        <activity-->
-<!--            android:name="com.example.drive360.Activity.MapsActivity"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_maps" />-->
+            android:value="YOUR_API_KEY" /> <!-- <activity -->
+        <!-- android:name="com.example.drive360.Activity.MapsActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:label="@string/title_activity_maps" /> -->
         <activity
-            android:name=".splashScreen"
+            android:name="com.example.drive360.Activity.splashScreen"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
             <intent-filter>
@@ -75,6 +78,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
