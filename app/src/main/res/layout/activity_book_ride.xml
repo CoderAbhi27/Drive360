@@ -1,117 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:background="@drawable/full_image"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="10dp">
 
         <TextView
+            android:id="@+id/textView18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#86673AB7"
+            android:fontFamily="sans-serif-black"
             android:text="Book your Ride"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:fontFamily="sans-serif-black"
-            android:textAlignment="center"
-            android:layout_marginBottom="40dp"/>
 
-        <EditText
-            android:id="@+id/etName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_edit_text"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="8dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Name" />
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
 
-        <EditText
-            android:id="@+id/etPhone"
+            android:hint="Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/round_edit_text"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider6"
+            android:layout_width="10dp"
+            android:layout_height="0dp"
+            app:dividerColor="#86673AB7"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroupPayment"
+            app:layout_constraintEnd_toStartOf="@+id/textView18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_edit_text"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="8dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
             android:hint="Phone Number"
-            android:inputType="phone" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
-        <EditText
-            android:id="@+id/etDestination"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/round_edit_text"
+
+                android:inputType="phone"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout7"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_edit_text"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="8dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Destination Address" />
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:hint="Destination Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
 
-        <EditText
-            android:id="@+id/etPickup"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDestination"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_edit_text"
+
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout8"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_edit_text"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="8dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Pickup Address" />
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:hint="Pickup Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
 
-        <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPickup"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_edit_text"
+
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
             android:id="@+id/etFromDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_edit_text"
+            android:background="#86673AB7"
             android:paddingHorizontal="20dp"
             android:paddingVertical="8dp"
-            android:layout_marginBottom="10dp"
-            android:hint="From Date"
-            android:inputType="date" />
+            android:text="FROM DATE"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etFromDate" />
 
-        <EditText
+        <TextView
             android:id="@+id/etToDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_edit_text"
+            android:background="#86673AB7"
             android:paddingHorizontal="20dp"
             android:paddingVertical="8dp"
-            android:layout_marginBottom="20dp"
-            android:hint="To Date"
-            android:inputType="date" />
+            android:text="FROM DATE"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+
+        <DatePicker
+            android:id="@+id/datePicker2"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etToDate" />
+
 
         <CheckBox
             android:id="@+id/chkCar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
             android:text="I have my own car"
             android:textSize="18sp"
-            android:layout_marginBottom="15dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datePicker2" />
 
         <TextView
+            android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:background="#86673AB7"
             android:text="Payment method:"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginBottom="5dp"/>
+            android:paddingLeft="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chkCar" />
 
         <RadioGroup
             android:id="@+id/radioGroupPayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17">
 
             <RadioButton
                 android:id="@+id/rbCash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cash payment"
-                android:layout_marginEnd="20dp"/>
+                android:layout_marginEnd="20dp"
+                android:text="Cash payment" />
 
             <RadioButton
                 android:id="@+id/rbHalfPayment"
@@ -120,21 +243,42 @@
                 android:text="Online Payment" />
 
         </RadioGroup>
+        <!--<com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/PaymentSelectionToggleGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:foregroundTint="#2F305A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            app:singleSelection="true">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/cash"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="CASH PAYMENT"
+                />
+        </com.google.android.material.button.MaterialButtonToggleGroup>-->
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingHorizontal="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
             android:background="@drawable/round_rectangle"
             android:backgroundTint="@android:color/holo_orange_light"
             android:clickable="true"
-            android:text="SUBMIT" />
+            android:paddingHorizontal="50dp"
+            android:text="SUBMIT"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupPayment" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </ScrollView>
