@@ -26,7 +26,7 @@ class YourDriversActivity : AppCompatActivity(), ItemClickListener {
         setContentView(R.layout.activity_your_drivers)
 
         recyclerView = findViewById(R.id.recyclerViewHired)
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.setHasFixedSize(true)
 
         auth = FirebaseAuth.getInstance()
