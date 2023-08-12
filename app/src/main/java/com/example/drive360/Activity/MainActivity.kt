@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menu!!.add("Log Out")
+        menu.add("Delete Account")
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -70,6 +71,20 @@ class MainActivity : AppCompatActivity() {
             builder.setMessage("Are you sure?")
             builder.setPositiveButton("LOG OUT", DialogInterface.OnClickListener{ dialog, which->
                 firebaseAuth.signOut()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            })
+            builder.setNegativeButton("Cancel", DialogInterface.OnClickListener{ dialog, which-> })
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.show()
+        }
+        if(item.title?.equals("Delete Account") == true){
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("DELETE YOUR ACCOUNT?")
+            builder.setMessage("This action will permanently delete your acount and all the data associated with it! ARE YOUR SURE?")
+            builder.setPositiveButton("DELETE MY ACCOUNT", DialogInterface.OnClickListener{ dialog, which->
+                firebaseAuth.currentUser?.delete()
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()

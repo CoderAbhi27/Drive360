@@ -154,7 +154,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
         <DatePicker
-            android:id="@+id/datePicker"
+            android:id="@+id/datePickerFrom"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:calendarViewShown="false"
@@ -171,7 +171,7 @@
             android:background="#86673AB7"
             android:paddingHorizontal="20dp"
             android:paddingVertical="8dp"
-            android:text="FROM DATE"
+            android:text="TO DATE"
             android:textSize="20sp"
             android:textStyle="bold"
             android:paddingStart="20dp"
@@ -179,10 +179,10 @@
             android:layout_marginLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+            app:layout_constraintTop_toBottomOf="@+id/datePickerFrom" />
 
         <DatePicker
-            android:id="@+id/datePicker2"
+            android:id="@+id/datePickerTo"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_marginTop="20dp"
@@ -192,24 +192,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etToDate" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:background="#86673AB7"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingLeft="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datePickerTo" />
 
         <CheckBox
             android:id="@+id/chkCar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="I have my own car"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/datePicker2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="#86673AB7"
             android:text="Payment method:"
             android:textColor="@color/black"
@@ -237,7 +250,7 @@
                 android:text="Cash payment" />
 
             <RadioButton
-                android:id="@+id/rbHalfPayment"
+                android:id="@+id/rbOnline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Online Payment" />

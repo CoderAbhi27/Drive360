@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:text="UPI" />
 
-        <RadioButton
+        <!--<RadioButton
             android:id="@+id/cardOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
             android:id="@+id/netbankingOption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Netbanking" />
+            android:text="Netbanking" />-->
     </RadioGroup>
 
     <!-- Proceed Button -->

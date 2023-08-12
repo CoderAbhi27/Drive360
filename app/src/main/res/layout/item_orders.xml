@@ -1,0 +1,75 @@
+<!-- ride_booking_item.xml -->
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="15dp"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: abc xyz"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone no: +91"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginTop="4dp"/>
+
+
+        <TextView
+            android:id="@+id/tvCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company: "
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/tvDeliveryAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery Address: "
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/tvNoOfDevices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No of Devices: "
+            android:textSize="16sp"
+            android:textColor="#888888"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Cost: ₹xx"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

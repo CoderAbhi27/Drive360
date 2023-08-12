@@ -38,11 +38,16 @@ class FuelTrackingFragment : androidx.fragment.app.Fragment(R.layout.fragment_fu
         super.onViewCreated(view, savedInstanceState)
 
         val orderNowButton : Button = view.findViewById(R.id.orderNowButton)
+        val orderNowButton2 : Button = view.findViewById(R.id.orderNowButton2)
         pieChart=view.findViewById(R.id.piechart)
 
         populatePieChart(pieChart)
 
         orderNowButton.setOnClickListener{
+            val intent = Intent(activity, FuelTrackingOrderActivity::class.java)
+            startActivity(intent)
+        }
+        orderNowButton2.setOnClickListener{
             val intent = Intent(activity, FuelTrackingOrderActivity::class.java)
             startActivity(intent)
         }

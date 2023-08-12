@@ -16,6 +16,8 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.example.drive360.Activity.YourDriversActivity
+import com.example.drive360.Activity.YourOrdersActivity
+import com.example.drive360.Activity.YourRidesActivity
 import com.example.sagarmiles.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -122,12 +124,23 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
 
 
         val yourDriversButton: Button = view.findViewById(R.id.yourDriversButton)
+        val yourRidesButton: Button = view.findViewById(R.id.yourRidesButton)
+        val yourOrdersButton: Button = view.findViewById(R.id.yourOrdersButton)
+
         yourDriversButton.setOnClickListener{
             val intent = Intent(activity, YourDriversActivity::class.java)
             startActivity(intent)
         }
 
+        yourRidesButton.setOnClickListener{
+            val intent = Intent(activity, YourRidesActivity::class.java)
+            startActivity(intent)
+        }
 
+        yourOrdersButton.setOnClickListener{
+            val intent = Intent(activity, YourOrdersActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

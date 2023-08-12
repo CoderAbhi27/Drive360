@@ -16,6 +16,7 @@ import android.telephony.SmsManager
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.drive360.DataClass.Driver
 import kotlin.properties.Delegates
 
 //import com.tournaments.googlepaytest.databinding.ActivityMainBinding
@@ -30,7 +31,6 @@ class PaymentActivity : AppCompatActivity() {
     private lateinit var driverSalaryTextView: TextView
     private lateinit var hiringFeeTextView: TextView
     private lateinit var proceedButton: Button
-    private lateinit var paymentOptionsRadioGroup: RadioGroup
     private lateinit var selectedPaymentOption: String
     private var driverCode by Delegates.notNull<Int>()
     private lateinit var hiringFee : String
@@ -58,7 +58,6 @@ class PaymentActivity : AppCompatActivity() {
         driverSalaryTextView = findViewById(R.id.driverSalary)
         hiringFeeTextView = findViewById(R.id.hiringFee)
         proceedButton = findViewById(R.id.proceedButton)
-        paymentOptionsRadioGroup = findViewById(R.id.paymentOptionsRadioGroup)
 
         driverCodeTextView.text = "Driver Code: $driverCode"
         driverNameTextView.text = "Name: $driverName"
@@ -67,33 +66,18 @@ class PaymentActivity : AppCompatActivity() {
 
         hiringFeeTextView.text = "Hiring Fee:  ₹$hiringFee"
 
-
-        //payment activity
-
-
-//        private lateinit var binding: ActivityMainBinding
-
-
+        val upiRadioButton : RadioButton = findViewById(R.id.upiOption)
 
 
         proceedButton.setOnClickListener {
-            val selectedPaymentOptionId = paymentOptionsRadioGroup.checkedRadioButtonId
-            selectedPaymentOption =
-                findViewById<RadioButton>(selectedPaymentOptionId).text.toString()
-
-            uri = getUpiPaymentUri(driverName!!, "916227406346@paytm", "Hire your driver", hiringFee!!)
-            payWithGPay()
-
-            onPaymentSuccessful(driverCode)
-
-            // Start payment activity based on the selected payment option
-          /*  when (selectedPaymentOption) {
-                "UPI" -> startUpiPaymentActivity(hiringFee!!)
-                "Card" -> startCardPaymentActivity(hiringFee!!)
-                "Netbanking" -> startNetbankingPaymentActivity(hiringFee!!)
-            }*/
+            if (upiRadioButton.isChecked) {
+                uri = getUpiPaymentUri(driverName!!, "916227406346@paytm", "Hire your driver", hiringFee!!)
+                payWithGPay()
+//                onPaymentSuccessful(driverCode)
+            } else {
+                Toast.makeText(this@PaymentActivity, "Please select payment method!", Toast.LENGTH_SHORT).show()
+            }
         }
-
 
     }
 
@@ -145,14 +129,39 @@ class PaymentActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val phoneNo = auth.currentUser!!.phoneNumber.toString()
         dbref = FirebaseDatabase.getInstance().getReference("driversHired").child(phoneNo).child(driverCode.toString())
-        dbref.setValue(true)
+
+        val driverType : String? = when(driverCode/1000){
+            1 -> "truck"
+            2 -> "bus"
+            //3 -> "3wheeler"
+            4 -> "heavy"
+            5 -> "car"
+            else -> null
+        }
+        val dbref2 = FirebaseDatabase.getInstance().getReference("drivers").child(driverType!!).child(driverCode.toString())
+        dbref2.addValueEventListener( object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                Log.i("data2", "yes2")
+                if (snapshot.exists()){
+                    Log.i("data2", "yes3")
+                    val data = snapshot.getValue(Driver::class.java)
+                    dbref.setValue(data)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@PaymentActivity, error.toString(), Toast.LENGTH_SHORT).show()
+            }
+
+        })
 
         Toast.makeText(this@PaymentActivity, "Driver Hired!", Toast.LENGTH_SHORT).show()
 
 //        val intent = Intent(applicationContext, MainActivity::class.java)
 //        val pi = PendingIntent.getActivity(applicationContext, 0, intent, 0)
-        val sms: SmsManager = SmsManager.getDefault()
-        sms.sendTextMessage("$phoneNo", null, "You have hired driver no. $driverCode by paying a fee of rs$hiringFee. on Drive360", null, null)
+
+//        val sms: SmsManager = SmsManager.getDefault()
+//        sms.sendTextMessage("$phoneNo", null, "You have hired driver no. $driverCode by paying a fee of rs$hiringFee. on Drive360", null, null)
 
         val intent2 = Intent(this@PaymentActivity, MainActivity::class.java)
         startActivity(intent2)

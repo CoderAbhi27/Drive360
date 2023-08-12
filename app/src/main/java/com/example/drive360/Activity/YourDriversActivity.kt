@@ -18,7 +18,6 @@ class YourDriversActivity : AppCompatActivity(), ItemClickListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DriverAdapter
     private var dataList : ArrayList<Driver> = ArrayList<Driver>()
-    private var codeList : ArrayList<String> = ArrayList<String>()
     private lateinit var dbref : DatabaseReference
     private lateinit var auth: FirebaseAuth
 
@@ -36,42 +35,14 @@ class YourDriversActivity : AppCompatActivity(), ItemClickListener {
         dbref.addValueEventListener( object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 dataList.clear()
-                codeList.clear()
                 if(snapshot.exists()){
                     for(dataSnap in snapshot.children){
-                        val code = dataSnap.key ?: continue
-                        codeList.add(code)
+                        val data= dataSnap.getValue(Driver::class.java)
+                        dataList.add(data!!)
                         Log.i("data2", "yes")
 
                     }
-                    for(code in codeList){
-                        val driverType : String = when(code[0]-'0'){
-                            1 -> "truck"
-                            2 -> "bus"
-                            3 -> "3wheeler"
-                            4 -> "heavy"
-                            5 -> "car"
-                            else -> null
-                        } ?: continue
-
-                        val dbref2 = FirebaseDatabase.getInstance().getReference("drivers").child(driverType).child(code)
-                        dbref2.addListenerForSingleValueEvent( object : ValueEventListener{
-                            override fun onDataChange(snapshot: DataSnapshot) {
-                                Log.i("data2", "yes2")
-                                if (snapshot.exists()){
-                                    Log.i("data2", "yes3")
-                                    val data = snapshot.getValue(Driver::class.java)
-                                    dataList.add(data!!)
-                                }
-                            }
-
-                            override fun onCancelled(error: DatabaseError) {
-                                Toast.makeText(this@YourDriversActivity, error.toString(), Toast.LENGTH_SHORT).show()
-                            }
-
-                        })
-                    }
-                    Log.i("data3", "$dataList[0]")
+                    Log.i("data2", "yes4")
                     adapter = DriverAdapter(dataList, this@YourDriversActivity)
                     recyclerView.adapter = adapter
 
