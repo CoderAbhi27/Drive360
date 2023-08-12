@@ -50,7 +50,7 @@ class ExploreDrivers : AppCompatActivity() , ItemClickListener/*, OnMapReadyCall
         val driverType = intent.getStringExtra("DriverType")
 
         recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.setHasFixedSize(true)
 
 //        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
