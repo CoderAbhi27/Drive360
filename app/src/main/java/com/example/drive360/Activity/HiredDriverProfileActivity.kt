@@ -15,6 +15,7 @@ class HiredDriverProfileActivity : AppCompatActivity() {
 
     private val GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user"
     private val GOOGLE_PAY_REQUEST_CODE = 123
+    private val UPI_ID = "8102823536@ibl"
     private var uri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +62,7 @@ class HiredDriverProfileActivity : AppCompatActivity() {
         }
 
         paySalaryButton.setOnClickListener{
-            uri = getUpiPaymentUri(name!!, "916227406346@paytm", "Monthly Salary", salaryDemanded!!)
+            uri = getUpiPaymentUri(name!!, UPI_ID, "Monthly Salary", salaryDemanded!!)
             payWithGPay()
         }
 

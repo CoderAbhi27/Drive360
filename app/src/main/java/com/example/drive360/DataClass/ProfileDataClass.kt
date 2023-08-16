@@ -6,5 +6,5 @@ data class User(
     val phoneNo: String?="",
     val age: Int=0,
     val location: String?="",
-    val profilePic: String?=""
+    val profilePic: String?="none"
 )

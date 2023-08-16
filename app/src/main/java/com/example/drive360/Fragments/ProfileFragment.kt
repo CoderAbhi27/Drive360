@@ -72,7 +72,7 @@ class ProfileFragment : androidx.fragment.app.Fragment(R.layout.fragment_profile
                     imageRef.putFile(imageUri)
                         .addOnSuccessListener {
                             imageRef.downloadUrl.addOnSuccessListener { imageUrl ->
-                                dbref.child("profilePic").setValue(imageUrl)
+                                dbref.child("profilePic").setValue(imageUrl.toString())
                             }
                         }
                 }

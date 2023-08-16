@@ -37,6 +37,7 @@ class PaymentActivity : AppCompatActivity() {
 
     private val GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user"
     private val GOOGLE_PAY_REQUEST_CODE = 123
+    private val UPI_ID = "8102823536@ibl"
     private var status: String? = null
     private var uri: Uri? = null
 
@@ -71,7 +72,7 @@ class PaymentActivity : AppCompatActivity() {
 
         proceedButton.setOnClickListener {
             if (upiRadioButton.isChecked) {
-                uri = getUpiPaymentUri(driverName!!, "916227406346@paytm", "Hire your driver", hiringFee!!)
+                uri = getUpiPaymentUri(driverName!!, UPI_ID, "Hire your driver", hiringFee!!)
                 payWithGPay()
 //                onPaymentSuccessful(driverCode)
             } else {

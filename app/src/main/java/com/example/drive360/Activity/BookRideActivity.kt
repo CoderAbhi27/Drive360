@@ -29,7 +29,7 @@ class BookRideActivity : AppCompatActivity() {
 
     private val DRIVER_COST = 3000
     private val CAR_COST = 2000
-    private val UPI_ID = "916227406346@paytm"
+    private val UPI_ID = "8102823536@ibl"
 
     private val GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user"
     private val GOOGLE_PAY_REQUEST_CODE = 123

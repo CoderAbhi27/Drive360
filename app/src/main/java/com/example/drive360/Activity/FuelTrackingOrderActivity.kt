@@ -27,7 +27,7 @@ class FuelTrackingOrderActivity : AppCompatActivity() {
     private lateinit var orderData: OrderData;
 
     private val PER_ORDER_COST = 1000
-    private val UPI_ID = "916227406346@paytm"
+    private val UPI_ID = "8102823536@ibl"
 
     private val GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user"
     private val GOOGLE_PAY_REQUEST_CODE = 123
