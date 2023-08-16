@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/full_image"
-    tools:context="com.example.drive360.Activity.MainActivity"
+    tools:context="com.drive.drive360.Activity.MainActivity"
     tools:targetApi="s">
 
     <ImageView
@@ -17,7 +17,7 @@
         android:layout_marginRight="35dp"
         android:layout_marginBottom="10dp"
         android:scaleType="centerInside"
-        android:src="@drawable/logocolor"
+        app:srcCompat="@drawable/logocolor"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
@@ -54,7 +54,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="120dp"
-                android:src="@drawable/profileicon" />
+                app:srcCompat="@drawable/profileicon" />
         </androidx.cardview.widget.CardView>
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/materialDivider"

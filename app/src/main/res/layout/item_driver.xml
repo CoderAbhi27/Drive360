@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="fitXY"
-            android:src="@drawable/profile" />
+            app:srcCompat="@drawable/profile" />
 
         <TextView
             android:id="@+id/DriverName"

@@ -1,10 +1,69 @@
 {
   "project_info": {
     "project_number": "640987677763",
+    "firebase_url": "https://sagar-miles-default-rtdb.firebaseio.com",
     "project_id": "sagar-miles",
     "storage_bucket": "sagar-miles.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640987677763:android:c8242db83c5310bf00c0f6",
+        "android_client_info": {
+          "package_name": "com.drive.drive360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640987677763-1nek6oeace6vahf8gnvk5cibf9n3ef4r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEEIoseHf6v8mrfKvLU7KSYHVLWGdsFoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640987677763-1nek6oeace6vahf8gnvk5cibf9n3ef4r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640987677763:android:c3dbb8cc524562b300c0f6",
+        "android_client_info": {
+          "package_name": "com.example.driverdata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640987677763-1nek6oeace6vahf8gnvk5cibf9n3ef4r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEEIoseHf6v8mrfKvLU7KSYHVLWGdsFoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640987677763-1nek6oeace6vahf8gnvk5cibf9n3ef4r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:640987677763:android:96880cfe762b892d00c0f6",
@@ -13,6 +72,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "640987677763-v0cm3vlbi3eg2v0a2asbo5tts0hf0nu9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sagarmiles",
+            "certificate_hash": "2f362b88100ebdd733928a3e767b84ac723cb33a"
+          }
+        },
         {
           "client_id": "640987677763-1nek6oeace6vahf8gnvk5cibf9n3ef4r.apps.googleusercontent.com",
           "client_type": 3

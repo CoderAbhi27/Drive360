@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@drawable/full_image"
-    tools:context="com.example.drive360.Activity.MainActivity">
+    tools:context="com.drive.drive360.Activity.MainActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +35,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="150dp"
-                android:src="@drawable/profileicon" />
+                app:srcCompat="@drawable/profileicon" />
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.divider.MaterialDivider

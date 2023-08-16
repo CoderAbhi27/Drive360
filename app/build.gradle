@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.sagarmiles'
+    namespace 'com.drive.drive360'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.sagarmiles"
+        applicationId "com.drive.drive360"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -38,11 +38,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.firebase:firebase-auth:21.0.3'
-    implementation 'com.google.firebase:firebase-database:20.0.4'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.3'
+    implementation 'com.google.firebase:firebase-auth:22.1.1'
+    implementation 'com.google.firebase:firebase-database:20.2.2'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.1.1'
     implementation 'com.squareup.picasso:picasso:2.8'
-    implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.2.1'
     implementation 'com.airbnb.android:lottie:6.0.1'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
@@ -51,10 +51,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 //    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+//    implementation 'com.google.android.gms:play-services-maps:11.8.0'
 //    compile 'com.google.android.gms:play-services-location:11.8.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
+    implementation("com.google.firebase:firebase-appcheck-playintegrity")
+    implementation("com.google.firebase:firebase-appcheck-ktx")
+//    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
 }

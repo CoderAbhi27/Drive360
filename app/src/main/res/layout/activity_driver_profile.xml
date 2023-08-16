@@ -33,7 +33,7 @@
                 android:layout_width="200dp"
                 android:layout_height="250dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/profile" />
+                app:srcCompat="@drawable/profile" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -173,7 +173,7 @@
             android:background="@drawable/profilebg"
             android:padding="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/certificate"
+            app:srcCompat="@drawable/certificate"
             app:layout_constraintBottom_toBottomOf="@+id/experienceTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/experienceTextView"

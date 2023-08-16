@@ -69,7 +69,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/truck" />
+                        app:srcCompat="@drawable/truck" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/bus" />
+                        app:srcCompat="@drawable/bus" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -132,7 +132,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/car" />
+                        app:srcCompat="@drawable/car" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -160,7 +160,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/heavy" />
+                        app:srcCompat="@drawable/heavy" />
 
                     <TextView
                         android:layout_width="match_parent"

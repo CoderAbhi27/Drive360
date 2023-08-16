@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.drive360.Activity.MainActivity">
+    tools:context="com.drive.drive360.Activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -98,7 +98,7 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/fuelimgtruck"
+            app:srcCompat="@drawable/fuelimgtruck"
             android:layout_marginBottom="20dp"/>
 
             <LinearLayout
@@ -238,7 +238,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:src="@drawable/fls_sensor"
+            app:srcCompat="@drawable/fls_sensor"
             android:layout_marginBottom="20dp"/>
 
         <TextView
@@ -258,7 +258,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/fuel_tracking_img4"
+            app:srcCompat="@drawable/fuel_tracking_img4"
             />
         </androidx.cardview.widget.CardView>
 

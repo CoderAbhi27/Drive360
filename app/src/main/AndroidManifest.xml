@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.drive.drive360">
 
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
 
     <application
         android:allowBackup="true"
@@ -19,16 +22,16 @@
         tools:targetApi="31">
 
         <activity
-            android:name="com.example.drive360.Activity.YourOrdersActivity"
+            android:name=".Activity.YourOrdersActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.YourRidesActivity"
+            android:name=".Activity.YourRidesActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.HiredDriverProfileActivity"
+            android:name=".Activity.HiredDriverProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.splashScreen"
+            android:name=".Activity.splashScreen"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
             <intent-filter>
@@ -38,34 +41,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.drive360.Activity.FuelTrackingOrderActivity"
+            android:name=".Activity.FuelTrackingOrderActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.BookRidePaymentActivity"
+            android:name=".Activity.BookRideActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.BookRideActivity"
+            android:name=".Activity.YourDriversActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.YourDriversActivity"
+            android:name=".Activity.PaymentActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.PaymentActivity"
+            android:name=".Activity.DriverProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.DriverProfileActivity"
+            android:name=".Activity.ExploreDrivers"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.ExploreDrivers"
+            android:name=".Activity.CreateProfile"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.CreateProfile"
+            android:name=".Activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.drive360.Activity.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.drive360.Activity.MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="false" />
 
         <meta-data
